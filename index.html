@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Gato con Botas - Proyecto Final</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts (medieval serif + sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#c59d4a; /* dorado suave */
+      --panel:#f6efe2; /* pergamino */
+      --text:#111;
+    }
+
+    /* Página con fondo oscuro para resaltar los juegos */
+    body{
+      background:#000; /* fondo general negro */
+      color:var(--text);
+      font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      padding-top:70px; /* espacio para navbar fixed */
+    }
+
+    /* Navbar estilo sencillo con toque medieval */
+    .navbar-brand{
+      font-family: 'Cinzel', serif;
+      letter-spacing:1px;
+      color:var(--panel) !important;
+    }
+
+    .nav-link{
+      color: #f5e9d6 !important;
+    }
+
+    /* Contenedores tipo pergamino sobre fondo negro */
+    .panel {
+      background: linear-gradient(180deg, rgba(246,239,226,0.98), rgba(230,216,188,0.98));
+      border-radius:12px;
+      padding:1.6rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      color: #1a1a1a;
+    }
+
+    .section {
+      padding:4rem 0;
+    }
+
+    h1, h2, h3{
+      font-family: 'Cinzel', serif;
+      color:#2b2b2b;
+    }
+
+    /* Footer small */
+    footer{
+      color:#ddd;
+      padding:2rem 0;
+      text-align:center;
+    }
+
+    /* Espacio para la imagen de cada integrante (placeholder) */
+    .member-img{
+      width:120px;
+      height:120px;
+      background:linear-gradient(180deg,#ddd,#bbb);
+      border-radius:8px;
+      display:block;
+      object-fit:cover;
+    }
+
+    /* Estilo de boton principal */
+    .btn-primary-custom{
+      background:var(--accent);
+      border:none;
+      color:#1a1a1a;
+      font-weight:700;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    /* Modal: controlar tamaño y centrar iframe 640x480 */
+    .modal-content{
+      background: #000; /* claramente negro para que el juego resalte */
+      border:none;
+      border-radius:10px;
+    }
+
+    .game-frame{
+      display:block;
+      margin:0 auto;
+      width:640px;
+      height:480px;
+      border:0;
+      background:#000;
+    }
+
+    /* Responsive: en pantallas pequeñas escalamos el iframe */
+    @media (max-width:700px){
+      .game-frame{ width:100%; height:calc(100vw * 0.75); }
+      .modal-dialog{ max-width:95% }
+    }
+
+    /* Small tweak para que los paneles no queden pegados al fondo negro */
+    .page-container{ max-width:1100px; margin:0 auto; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR FIXED TOP -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">El Gato con Botas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#aventura">Aventura gráfica</a></li>
+          <li class="nav-item"><a class="nav-link" href="#minijuego">El desafío del ogro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
+          <li class="nav-item"><a class="nav-link" href="#integrantes">Integrantes</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INICIO -->
+  <section id="inicio" class="section">
+    <div class="page-container">
+      <div class="panel">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <h1>Proyecto Final — <span style="color:var(--accent)">El Gato con Botas Interactivo</span></h1>
+            <p>Una reinterpretación interactiva del clásico cuento del Gato con Botas donde las decisiones del jugador abren caminos alternativos. Incluye una aventura narrativa y un mini-juego arcade relacionado con la historia.</p>
+            <p><em>Resolución de los juegos: 640 × 480 — se mostrarán centrados en un modal oscuro para mejorar la experiencia.</em></p>
+          </div>
+          <div class="col-md-5 text-center">
+            <!-- Espacio para imagen principal (poner imagen después) -->
+            <div style="width:260px;height:180px;margin:0 auto;background:linear-gradient(180deg,#e9d9b9,#c9a86e);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+              <small style="color:#3b2b1a">Imagen principal (pendiente)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVENTURA GRAFICA -->
+  <section id="aventura" class="section">
+    <div class="page-container">
+      <div class="panel">
+        <h2>Aventura gráfica</h2>
+        <p>La aventura narrativa adapta la historia del Gato con Botas. El jugador toma decisiones que abren rutas secundarias y finales alternativos. Ideal para explorar narrativa ramificada y roles de personaje.</p>
+
+        <div class="pt-3">
+          <button class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#modalAventura">Jugar Aventura Gráfica</button>
+        </div>
+
+        <hr>
+        <h5>Decisiones clave (ejemplos)</h5>
+        <ul>
+          <li>Elegir ayudar o no al molinero.</li>
+          <li>Aceptar la oferta del rey o tramar un plan propio.</li>
+          <li>Buscar aliados o enfrentarse solo al ogro.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI-JUEGO -->
+  <section id="minijuego" class="section">
+    <div class="page-container">
+      <div class="panel">
+        <h2>El desafío del ogro (Mini-juego)</h2>
+        <p>Mini-juego arcade inspirado en Space Invaders: el objetivo es debilitar al ogro para que el Gato pueda ejecutar su truco. Complementa la narrativa principal.</p>
+
+        <div class="pt-3">
+          <button class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#modalOgro">Jugar El desafío del ogro</button>
+        </div>
+
+        <hr>
+        <h5>Cómo se relaciona con la historia</h5>
+        <p>Los resultados del mini-juego pueden usarse (manual o documentalmente) para decidir el estado del ogro en la aventura principal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="section">
+    <div class="page-container">
+      <div class="panel">
+        <h2>Proceso de producción</h2>
+        <p>Herramientas utilizadas: <strong>p5.js</strong>, editores de imagen vectorial y raster, y herramientas de prototipado. El workflow incluyó diseño, prototipado, programación y pruebas.</p>
+        <h5>Etapas</h5>
+        <ol>
+          <li>Diseño conceptual y paleta visual (medieval caricaturesco).</li>
+          <li>Prototipado en p5.js.</li>
+          <li>Integración del mini-juego y balanceo.</li>
+          <li>Pruebas y ajustes finales.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRANTES -->
+  <section id="integrantes" class="section">
+    <div class="page-container">
+      <div class="panel">
+        <h2>Integrantes</h2>
+        <div class="row gy-4">
+
+          <!-- Integrante 1 -->
+          <div class="col-md-6 text-center">
+            <div class="mb-2">
+              <!-- Placeholder para imagen: reemplazar src cuando tengas la foto -->
+              <button class="btn p-0" type="button" data-bs-toggle="collapse" data-bs-target="#descLautaro" aria-expanded="false" aria-controls="descLautaro">
+                <img src="imagenes/persona1.jpg" alt="Lautaro Caceres" class="member-img">
+              </button>
+            </div>
+            <h5>Lautaro Caceres</h5>
+            <div class="collapse mt-2" id="descLautaro">
+              <div class="card card-body text-start">
+                <p><strong>Rol:</strong> Programación y lógica (p5.js)</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integrante 2 -->
+          <div class="col-md-6 text-center">
+            <div class="mb-2">
+              <button class="btn p-0" type="button" data-bs-toggle="collapse" data-bs-target="#descMaximo" aria-expanded="false" aria-controls="descMaximo">
+                <img src="imagenes/persona2.jpg" alt="Maximo Maldonado" class="member-img">
+              </button>
+            </div>
+            <h5>Maximo Maldonado</h5>
+            <div class="collapse mt-2" id="descMaximo">
+              <div class="card card-body text-start">
+                <p><strong>Rol:</strong> Diseño visual e ilustraciones</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="page-container">
+      <small>Proyecto Final — El Gato con Botas Interactivo — Universidad / Materia</small>
+    </div>
+  </footer>
+
+  <!-- MODAL: AVENTURA -->
+  <div class="modal fade" id="modalAventura" tabindex="-1" aria-labelledby="modalAventuraLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-light" id="modalAventuraLabel">Aventura gráfica</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center pb-4">
+          <!-- Iframe apunta a ruta local dentro del proyecto -->
+          <iframe class="game-frame" src="tpfinalparte1/index.html" title="Aventura gráfica"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: OGRO (Minijuego) -->
+  <div class="modal fade" id="modalOgro" tabindex="-1" aria-labelledby="modalOgroLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-light" id="modalOgroLabel">El desafío del ogro</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center pb-4">
+          <iframe class="game-frame" src="tpfinalparte2/index.html" title="El desafío del ogro"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Small helper: pausar sonidos o animaciones cuando se cierra el modal (si lo necesitás) -->
+  <script>
+    const modalA = document.getElementById('modalAventura');
+    const iframeA = modalA.querySelector('iframe');
+    modalA.addEventListener('hidden.bs.modal', () => {
+      // reset iframe src to stop the sketch (useful if p5 runs audio/loop)
+      iframeA.src = iframeA.src;
+    });
+
+    const modalO = document.getElementById('modalOgro');
+    const iframeO = modalO.querySelector('iframe');
+    modalO.addEventListener('hidden.bs.modal', () => {
+      iframeO.src = iframeO.src;
+    });
+  </script>
+</body>
+</body>
+</html>
