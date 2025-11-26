@@ -81,21 +81,31 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.4);
     }
 
-    /* Modal: controlar tamaño y centrar iframe 640x480 */
-    .modal-content{
-      background: #000; /* claramente negro para que el juego resalte */
-      border:none;
-      border-radius:10px;
-    }
+.modal-dialog {
+  max-width: 100%!important;
+  margin: 0;
+}
 
-    .game-frame{
-      display:block;
-      margin:0 auto;
-      width:640px;
-      height:480px;
-      border:0;
-      background:#000;
-    }
+.modal-content {
+  background: black;
+  border: none;
+  height: 100vh;
+}
+
+.modal-body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: black;
+}
+
+.game-frame {
+  width: 640px;
+  height: 480px;
+  border: none;
+}
 
     /* Responsive: en pantallas pequeñas escalamos el iframe */
     @media (max-width:700px){
@@ -260,12 +270,12 @@
   </footer>
 
   <!-- MODAL: AVENTURA -->
-  <div class="modal fade" id="modalAventura" tabindex="-1" aria-labelledby="modalAventuraLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade" id="modalAventura" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
-        <div class="modal-header border-0">
+        <div class="modal-body">
           <h5 class="modal-title text-light" id="modalAventuraLabel">Aventura gráfica</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white"></button>
         </div>
         <div class="modal-body text-center pb-4">
           <!-- Iframe apunta a ruta local dentro del proyecto -->
@@ -276,12 +286,12 @@
   </div>
 
   <!-- MODAL: OGRO (Minijuego) -->
-  <div class="modal fade" id="modalOgro" tabindex="-1" aria-labelledby="modalOgroLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <div class="modal fade" id="modalOgro" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
-        <div class="modal-header border-0">
+        <div class="modal-body">
           <h5 class="modal-title text-light" id="modalOgroLabel">El desafío del ogro</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white"></button>
         </div>
         <div class="modal-body text-center pb-4">
           <iframe class="game-frame" src="tpfinalparte2/index.html" title="El desafío del ogro"></iframe>
@@ -311,3 +321,4 @@
 </body>
 </body>
 </html>
+
