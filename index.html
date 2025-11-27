@@ -81,6 +81,29 @@
       padding: 0 20px;
     }
 
+    .frame-pergamino {
+  padding: 12px;
+  background: #d9c5a3;
+  border: 2px solid #8f6c4c;
+  border-radius: 8px;
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.25),
+    inset 0 0 20px rgba(139, 108, 76, 0.2);
+  position: relative;
+  display: inline-block;
+}
+
+.frame-pergamino::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed #4b2e19;
+  border-radius: 6px;
+  opacity: 0.4;
+}
+
+    
+
     @media (max-width: 768px) {
       .banner-title { font-size: 2.5rem; letter-spacing: 1.5px; }
     }
@@ -159,6 +182,8 @@
       margin: 0 auto;
       display: block;
     }
+
+  
   </style>
 </head>
 <body>
@@ -189,19 +214,21 @@
   <div class="grid-12">
     <div class="section-text">
       <h2>Una reinterpretación interactiva del clásico</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Sed nec arcu et urna vestibulum luctus. Vivamus tristique, lorem sit amet facilisis feugiat, urna massa porttitor massa, id viverra lorem felis ut nisi.</p>
+      <p>Bienvenido al mundo del Gato con Botas, donde una sola aventura puede tomar muchos caminos distintos. En este proyecto exploramos una historia original inspirada en el legendario héroe felino, llena de decisiones, rutas alternativas y momentos que cambian el rumbo del relato. Prepárate para vivir una experiencia única, donde cada elección abre un nuevo sendero en la leyenda.</p>
     </div>
     <div class="section-img">
       <img src="imagenes/foto1.jpg" alt="Imagen descriptiva">
     </div>
   </div>
-
+  
   <section id="juegos" class="juegos-section">
     <h2>Juegos Interactivos</h2>
     <div class="juegos-grid">
 
       <div class="game-card">
-        <img src="imagenes/foto8.jpg" alt="Aventura Gráfica">
+        <div class="frame-pergamino">
+        <img src="imagenes/foto8.jpg" alt="Aventura Gráfica" class="img-fluid rounded">
+        </div>
         <h3>Aventura Gráfica</h3>
         <p>Una experiencia narrativa donde tomás decisiones clave que cambian la historia. Explorá escenarios, hablá con personajes y elegí tu propio camino.</p>
         <ul class="lista-decisiones">
@@ -216,7 +243,9 @@
       </div>
 
       <div class="game-card">
-        <img src="imagenes/foto10.jpg" alt="Minijuego">
+        <div class="frame-pergamino">
+        <img src="imagenes/foto10.jpg" alt="Minijuego" class="img-fluid rounded">
+        </div>
         <h3>Minijuego</h3>
         <p>Un desafío arcade inspirado en la historia principal. Poné a prueba tus reflejos y descubrí cómo se conecta con la aventura gráfica.</p>
         <p>El minijuego representa las batallas rápidas del Gato con Botas dentro de la narrativa.</p>
@@ -267,7 +296,7 @@
       </div>
       <div class="proceso-card">
         <h3>Página Web</h3>
-        <p>Primero definimos las secciones que tendría la página, luego buscamos una paleta de colores que sea como medio medieval por el contexto de la historia del gato con botas. Seguimos definiendo que framework usar (en este caso bootstrap). Luego decidimos usar card, modal y collapse como componentes a destacar.</p>
+        <p>Primero definimos las secciones que tendría la página, luego buscamos una paleta de colores y tipografias estilo medieval por el contexto de la historia del gato con botas. Seguimos definiendo que framework usar (en este caso bootstrap). Luego decidimos usar card, modal y collapse como componentes a destacar.</p>
       </div>
     </div>
   </section>
@@ -283,7 +312,7 @@
         <div class="collapse mt-2" id="lautaroInfo">
             <div class="p-3 rounded text-light" style="background-color: #4b2e19;">
           <p class="mb-0" style="color: #ffffff"><strong>Lautaro Cáceres</strong><br>
-            Programación, creacion de assets</p>
+            Amante de los deportes, el lol y la pizza </p>
             </div>
         </div>
       </div>
